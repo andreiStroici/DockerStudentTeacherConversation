@@ -2,7 +2,9 @@
 
 ## Capition
 1. [Introduction](#1-introduction)
-2. [Techincal Aspects](#2-techincal-apsects)
+2. [Techincal Aspects](#2-techincal-apsects)  
+        1. [Micorservices archiecture](#1-micorservices-archiecture)  
+        2. [ Docker Containers - Technical Overview](#2-docker-containers---technical-overview) 
 3. [Microservices](#3-microservices)
 4. [Activity Diagram](#4-activity-diagram)
 5. [Class Diagram](#5-class-diagram)
@@ -48,7 +50,7 @@ This section explains the most important technical aspects of the project.
 
 ---
 
-### 3. Docker Containers - Technical Overview
+### 2. Docker Containers - Technical Overview
 
 Docker containers are lightweight, standalone, and executable software packages that include everything needed to run an application: code, runtime, system tools, libraries, and configuration. Containers are isolated from one another and from the host system, ensuring consistency and reproducibility across environments.
 
