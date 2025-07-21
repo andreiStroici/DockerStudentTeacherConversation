@@ -10,7 +10,9 @@
 
 ## 1. Introduction
 
+This project illustrates a simple communication model between a teacher and multiple students using a microservices architecture. Each component of the system is implemented as an independent microservice and containerized using Docker.
 
+The primary goal of this project is to demonstrate how Docker can be used to coordinate and manage microservices effectively, showcasing the principles of containerization, isolation, and service orchestration. 
 
 ---
 
@@ -35,3 +37,5 @@
 ---
 
 ## 7. Bibiliography
+
+- Martin Fowler & James Lewis. ["Microservices"](https://martinfowler.com/articles/microservices.html), March 2014.
