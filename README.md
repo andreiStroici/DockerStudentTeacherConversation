@@ -96,7 +96,7 @@ This microservice implements a **heartbeat mechanism** that periodically checks 
 
 #### Technologies Used
 
-- Docker  
+- Docker (with custom network for inter-container communication)
 - Kotlin  
 
 #### SOLID Principles Applied
@@ -110,8 +110,50 @@ This microservice implements a **heartbeat mechanism** that periodically checks 
 - **`Inversion of Control (IoC)`**  
   Communication with external components is handled via TCP connections, decoupling the microservice logic from direct service dependencies.
 
+### 2. MessageManager Microservice
+
+This microservice is responsible for redirecting messages between the `AssistantMicroservice`, the `StudentMicroservice`, and between multiple instances of the `StudentMicroservice`.
+
+#### Responsibilities
+
+- **`add subscriber`**  
+  Accepts a connection from a new subscriber and adds it to the internal subscriber list.
+
+- **`remove subscriber`**  
+  Removes a subscriber when it gracefully closes its connection with this microservice.
+
+- **`broadcast`**  
+  Sends a message to all connected subscribers except the one that originally sent the message.
+
+- **`send to`**  
+  Sends a message directly to a specific destination in the network.
+
+#### Technologies Used
+
+- Docker (with custom network for inter-container communication)  
+- Kotlin  
+
+#### SOLID Principles Applied
+
+- **`Single Responsibility Principle (SRP)`**  
+  The microservice has a single well-defined responsibility: redirecting messages within the custom network.
+
+- **`Interface Segregation Principle`**  
+  The microservice exposes only the minimal and necessary operations required for message redirection.
+
+- **`Inversion of Control (IoC)`**  
+  Communication with external components is handled via TCP connections, decoupling the microservice logic from direct service dependencies.
+
 
 ---
+
+Additionally, a graphical interface was implemented to allow the student to send questions or requests to the HeartbeatMicroservice.
+
+---
+---
+---
+---
+
 
 ## 4. Activity Diagram
 
