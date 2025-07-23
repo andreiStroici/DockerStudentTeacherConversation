@@ -77,6 +77,40 @@ Docker containers are lightweight, standalone, and executable software packages 
 
 ## 3. Microservices
 
+This section presents the microservices used in the system.
+
+### 1. HeartbeatMicroservice
+
+This microservice implements a **heartbeat mechanism** that periodically checks whether subscribed containers are alive. If a container becomes unresponsive, the microservice attempts to restart it.
+
+#### Responsibilities
+
+- **`add subscriber`**  
+  Accepts a connection from a new subscriber and adds it to the internal subscriber list.
+
+- **`remove subscriber`**  
+  Removes a subscriber when it gracefully closes its connection with this microservice.
+
+- **`evaluate`**  
+  Periodically (every 5 seconds) iterates through the list of subscribers to check their availability. If a subscriber is unresponsive, the microservice tries to restart it.
+
+#### Technologies Used
+
+- Docker  
+- Kotlin  
+
+#### SOLID Principles Applied
+
+- **`Single Responsibility Principle (SRP)`**  
+  The microservice has a single well-defined responsibility: managing the heartbeat mechanism and monitoring container availability.
+
+- **`Interface Segregation Principle`**  
+  The microservice exposes only the minimal and necessary operations required to manage subscribers and monitor their health.
+
+- **`Inversion of Control (IoC)`**  
+  Communication with external components is handled via TCP connections, decoupling the microservice logic from direct service dependencies.
+
+
 ---
 
 ## 4. Activity Diagram
