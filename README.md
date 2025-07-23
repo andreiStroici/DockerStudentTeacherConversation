@@ -197,7 +197,7 @@ This microservice models the student's actions: asking and responding to questio
 - **`Inversion of Control (IoC)`**  
   Communication with external components is handled via TCP connections, decoupling internal logic from direct dependencies.
 
-Additionally, a graphical interface was implemented to allow the student to send questions or requests to the `HeartbeatMicroservice`.
+Additionally, a graphical interface was implemented to allow the student to send questions or requests to the others students or to  the teacher.
 
 ### 4. AssistantMicroservice
 
@@ -233,6 +233,47 @@ This microservice represents the teacher assistant and ensures that questions an
 
   Communication with external components is handled via TCP connections, decoupling the microservice's internal logic from external service dependencies.
 
+### 5. TeacherMicroservice
+
+This microservice represents the teacher that can ask questions and response to questions and evaluates students. 
+
+#### Responsibilities
+
+- **`subscribe`**
+
+  This responsibility is used to make a connection with the AssitantMicroservice.
+
+- **`ask question`**
+
+  This responsibility is used to put a question to the students.
+
+- **`response question`**
+
+  This responsibility is used to offer a response to a question, if the teacher knows (based on a text file with responses).
+
+- **`evaluate`**
+
+  This responsibility lets the teacher to grade the students.
+
+#### Technologies Used
+
+- Docker (with custom network for inter-container communication)  
+- Kotlin  
+
+#### SOLID Principles Applied
+
+- **`Single Responsibility Principle (SRP)`**  
+
+  The microservice has a single well-defined responsibility: it implements teacher attributes: evaluate students, ask questions, and responde to the student questions.
+
+- **`Interface Segregation Principle`**  
+
+  The microservice exposes only the essential operations required for communication and interaction.
+
+- **`Inversion of Control (IoC)`**  
+
+  Communication with external components is handled via TCP connections, decoupling internal logic from direct dependencies.
+
 ---
 
 ## 5. Activity Diagram
@@ -240,10 +281,6 @@ This microservice represents the teacher assistant and ensures that questions an
 ---
 
 ## 6. Class Diagram
-
----
-
-## 7. Class Diagram
 
 ---
 
