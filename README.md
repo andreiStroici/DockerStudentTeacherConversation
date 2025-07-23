@@ -146,14 +146,41 @@ This microservice is responsible for redirecting messages between the `Assistant
 - **`Inversion of Control (IoC)`**  
   Communication with external components is handled via TCP connections, decoupling the microservice logic from direct service dependencies.
 
+### 3. StudentMicroservice
 
----
+This microservice models the student's actions: asking and responding to questions.
 
-Additionally, a graphical interface was implemented to allow the student to send questions or requests to the HeartbeatMicroservice.
+#### Responsibilities
 
----
----
----
+- **`subscribe`**  
+  Allows the `StudentMicroservice` to subscribe to both the `MessageManagerMicroservice` and the `HeartbeatMicroservice`.
+
+- **`ask`**  
+  Enables the student to send a question to either the `TeacherMicroservice` or another student.
+
+- **`respond`**  
+  Sends a response to a received question by forwarding a message through the `MessageManagerMicroservice`.
+
+#### Technologies Used
+
+- Docker (with custom network for inter-container communication)  
+- Kotlin  
+
+#### SOLID Principles Applied
+
+- **`Single Responsibility Principle (SRP)`**  
+  The microservice has a single well-defined responsibility: managing question-and-answer interactions for the student.
+
+- **`Interface Segregation Principle`**  
+  The microservice exposes only the essential operations required for communication and interaction.
+
+- **`Inversion of Control (IoC)`**  
+  Communication with external components is handled via TCP connections, decoupling internal logic from direct dependencies.
+
+Additionally, a graphical interface was implemented to allow the student to send questions or requests to the `HeartbeatMicroservice`.
+
+
+
 ---
 
 
