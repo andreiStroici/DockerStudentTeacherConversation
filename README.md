@@ -5,11 +5,14 @@
 2. [Techincal Aspects](#2-techincal-apsects)  
     1. [Micorservices archiecture](#1-micorservices-archiecture)  
     2. [ Docker Containers - Technical Overview](#2-docker-containers---technical-overview) 
-3. [Microservices](#3-microservices)
+3. [Usecase Diagram](#3-usecase-diagram)
+4. [Microservices](#4-microservices)
     1. [HeartbeatMicroservice](#1-heartbeatmicroservice)
     2. [MessageManager Microservice](#2-messagemanager-microservice)
-4. [Activity Diagram](#4-activity-diagram)
-5. [Class Diagram](#5-class-diagram)
+    3. [StudentMicroservice](#3-studentmicroservice)
+    4. [AssistantMicroservice](#4-assistantmicroservice)
+5. [Activity Diagram](#4-activity-diagram)
+6. [Class Diagram](#5-class-diagram)
 ---
 
 ## 1. Introduction
