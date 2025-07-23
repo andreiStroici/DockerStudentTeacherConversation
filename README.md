@@ -77,7 +77,11 @@ Docker containers are lightweight, standalone, and executable software packages 
 
 ---
 
-## 3. Microservices
+## 3. Usecase Diagram
+
+---
+
+## 4. Microservices
 
 This section presents the microservices used in the system.
 
@@ -88,12 +92,15 @@ This microservice implements a **heartbeat mechanism** that periodically checks 
 #### Responsibilities
 
 - **`add subscriber`**  
+
   Accepts a connection from a new subscriber and adds it to the internal subscriber list.
 
 - **`remove subscriber`**  
+
   Removes a subscriber when it gracefully closes its connection with this microservice.
 
 - **`evaluate`**  
+
   Periodically (every 5 seconds) iterates through the list of subscribers to check their availability. If a subscriber is unresponsive, the microservice tries to restart it.
 
 #### Technologies Used
@@ -104,12 +111,15 @@ This microservice implements a **heartbeat mechanism** that periodically checks 
 #### SOLID Principles Applied
 
 - **`Single Responsibility Principle (SRP)`**  
+
   The microservice has a single well-defined responsibility: managing the heartbeat mechanism and monitoring container availability.
 
 - **`Interface Segregation Principle`**  
+
   The microservice exposes only the minimal and necessary operations required to manage subscribers and monitor their health.
 
 - **`Inversion of Control (IoC)`**  
+
   Communication with external components is handled via TCP connections, decoupling the microservice logic from direct service dependencies.
 
 ### 2. MessageManager Microservice
@@ -119,15 +129,19 @@ This microservice is responsible for redirecting messages between the `Assistant
 #### Responsibilities
 
 - **`add subscriber`**  
+
   Accepts a connection from a new subscriber and adds it to the internal subscriber list.
 
 - **`remove subscriber`**  
+
   Removes a subscriber when it gracefully closes its connection with this microservice.
 
 - **`broadcast`**  
+
   Sends a message to all connected subscribers except the one that originally sent the message.
 
 - **`send to`**  
+
   Sends a message directly to a specific destination in the network.
 
 #### Technologies Used
@@ -138,12 +152,15 @@ This microservice is responsible for redirecting messages between the `Assistant
 #### SOLID Principles Applied
 
 - **`Single Responsibility Principle (SRP)`**  
+
   The microservice has a single well-defined responsibility: redirecting messages within the custom network.
 
 - **`Interface Segregation Principle`**  
+
   The microservice exposes only the minimal and necessary operations required for message redirection.
 
 - **`Inversion of Control (IoC)`**  
+
   Communication with external components is handled via TCP connections, decoupling the microservice logic from direct service dependencies.
 
 ### 3. StudentMicroservice
@@ -153,7 +170,7 @@ This microservice models the student's actions: asking and responding to questio
 #### Responsibilities
 
 - **`subscribe`**  
-  Allows the `StudentMicroservice` to subscribe to both the `MessageManagerMicroservice` and the `HeartbeatMicroservice`.
+  Allows the `StudentMicroservice` to subscribe to both the `MessageManagerMicroservice`, `AssistantMicroservice`, and the `HeartbeatMicroservice`.
 
 - **`ask`**  
   Enables the student to send a question to either the `TeacherMicroservice` or another student.
@@ -179,24 +196,55 @@ This microservice models the student's actions: asking and responding to questio
 
 Additionally, a graphical interface was implemented to allow the student to send questions or requests to the `HeartbeatMicroservice`.
 
+### 4. AssistantMicroservice
 
+This microservice represents the teacher assistant and ensures that questions and responses sent to the teacher come from valid students. It intermediates communication between the `TeacherMicroservice` and the `MessageManagerMicroservice`.
+
+#### Responsibilities
+
+- **`add subscriber`**  
+  Allows the assistant to monitor student connections and identify which student is sending a message.
+
+- **`remove subscriber`**  
+  Removes a subscriber when it gracefully closes its connection with this microservice.
+
+- **`send message`**  
+  Sends a message to either the `TeacherMicroservice` or the `MessageManagerMicroservice`, depending on the context.
+
+#### Technologies Used
+
+- Docker (with custom network for inter-container communication)  
+- Kotlin  
+
+#### SOLID Principles Applied
+
+- **`Single Responsibility Principle (SRP)`**  
+
+  The microservice has a single well-defined responsibility: authenticating and mediating communication between students and the `TeacherMicroservice`.
+
+- **`Interface Segregation Principle`**  
+
+  The microservice exposes only the essential operations needed for communication handling.
+
+- **`Inversion of Control (IoC)`**  
+
+  Communication with external components is handled via TCP connections, decoupling the microservice's internal logic from external service dependencies.
 
 ---
 
-
-## 4. Activity Diagram
-
----
-
-## 5. Class Diagram
+## 5. Activity Diagram
 
 ---
 
-## 6 Class Diagram
+## 6. Class Diagram
 
 ---
 
-## 7. Bibiliography
+## 7. Class Diagram
+
+---
+
+## 8. Bibiliography
 
 - Martin Fowler & James Lewis. ["Microservices"](https://martinfowler.com/articles/microservices.html), March 2014.
 
