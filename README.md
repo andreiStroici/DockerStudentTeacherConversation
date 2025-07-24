@@ -295,6 +295,9 @@ To improve clarity, a separate activity diagram is provided for each microservic
 
 ![Student activity diagram](/Images/Student.png)
 
+#### 2. TeacherMicroservice
+
+![Teacher activity diagram](/Images/Teacher.png)
 
 ---
 
