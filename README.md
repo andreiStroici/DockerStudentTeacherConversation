@@ -83,6 +83,16 @@ Docker containers are lightweight, standalone, and executable software packages 
 
 ## 3. Usecase Diagram
 
+In the image below, the use case diagram is presented:
+
+![Use case diagram](/Images/Usecase.png)
+
+The diagram includes three actors: **student**, **teacher**, and **assistant**.
+
+The **student** and **teacher** share the same main functionalities: asking questions and providing responses.
+
+The **assistant** intermediates communication between the student and the teacher and verifies the identity of the student to ensure that questions and responses come from a legitimate source.
+
 ---
 
 ## 4. Microservices
