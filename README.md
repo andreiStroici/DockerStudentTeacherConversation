@@ -307,6 +307,10 @@ To improve clarity, a separate activity diagram is provided for each microservic
 
 ![MessageManager activity diagram](/Images/MessageManager.png)
 
+#### 5. HeartbeatMicroservice
+
+![Heartbeat activity diagram](/Images/Heartbeat.png)
+
 ---
 
 ## 6. Class Diagram
