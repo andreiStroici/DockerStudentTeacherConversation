@@ -299,6 +299,10 @@ To improve clarity, a separate activity diagram is provided for each microservic
 
 ![Teacher activity diagram](/Images/Teacher.png)
 
+#### 3. AssistantMicroservice
+
+![Assistant activity diagram](/Images/Assistantpng.png)
+
 ---
 
 ## 6. Class Diagram
