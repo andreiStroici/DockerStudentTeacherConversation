@@ -289,6 +289,13 @@ This microservice represents the teacher that can ask questions and response to 
 
 ## 5. Activity Diagram
 
+To improve clarity, a separate activity diagram is provided for each microservice.
+
+#### 1. StudentMicroservice
+
+![Student activity diagram](/Images/Student.png)
+
+
 ---
 
 ## 6. Class Diagram
