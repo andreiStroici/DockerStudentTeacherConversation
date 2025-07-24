@@ -12,8 +12,8 @@
     3. [StudentMicroservice](#3-studentmicroservice)
     4. [AssistantMicroservice](#4-assistantmicroservice)
     5. [TeacherMicroservice](#5-teachermicroservice)
-5. [Activity Diagram](#4-activity-diagram)
-6. [Class Diagram](#5-class-diagram)
+5. [Activity Diagram](#5-activity-diagram)
+6. [Class Diagram](#6-class-diagram)
 ---
 
 ## 1. Introduction
