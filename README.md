@@ -303,6 +303,10 @@ To improve clarity, a separate activity diagram is provided for each microservic
 
 ![Assistant activity diagram](/Images/Assistantpng.png)
 
+#### 4. MessageManager Microservice
+
+![MessageManager activity diagram](/Images/MessageManager.png)
+
 ---
 
 ## 6. Class Diagram
