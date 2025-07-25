@@ -113,7 +113,7 @@ This microservice implements a **heartbeat mechanism** that periodically checks 
 
   Removes a subscriber when it gracefully closes its connection with this microservice.
 
-- **`evaluate`**  
+- **`evaluate containers`**  
 
   Periodically (every 5 seconds) iterates through the list of subscribers to check their availability. If a subscriber is unresponsive, the microservice tries to restart it.
 
@@ -269,7 +269,7 @@ This microservice represents the teacher that can ask questions and response to 
 
   This responsibility is used to offer a response to a question, if the teacher knows (based on a text file with responses).
 
-- **`evaluate`**
+- **`grade student`**
 
   This responsibility lets the teacher to grade the students.
 
