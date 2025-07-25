@@ -315,9 +315,33 @@ To improve clarity, a separate activity diagram is provided for each microservic
 
 ## 6. Class Diagram
 
+For the implementation of the microservices, an object-oriented programming (OOP) approach was chosen, where each microservice is structured around classes and objects.
+
+In the following, the class diagram for each microservice is presented.
+
+#### 1. StudentMicroservice
+
+![StudentMicroservice class diagram](/Images/StudentClass.png)
+
+#### 2. TeacherMicroservice
+
+![TeacherMicroservice class diagram](/Images/TeacherClass.png)
+
+#### 3. AssistantMicroservice
+
+![AssistantMicroservice](/Images/AssistantMicroserviceClass.png)
+
+#### 4. MessageManager Microservice
+
+![MessageManager Microservice class diagram](/Images/MessageManagerClass.png)
+
+#### 5. HeartbeatMicroservice
+
+![HeartbeatMicroservice](/Images/HeartbeatClass.png)
+
 ---
 
-## 8. Bibiliography
+## Bibiliography
 
 - Martin Fowler & James Lewis. ["Microservices"](https://martinfowler.com/articles/microservices.html), March 2014.
 
