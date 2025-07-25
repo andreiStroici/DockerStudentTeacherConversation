@@ -292,6 +292,8 @@ This microservice represents the teacher that can ask questions and response to 
 
   Communication with external components is handled via TCP connections, decoupling internal logic from direct dependencies.
 
+![Microservice diagram](/Images/image.png)
+
 ---
 
 ## 5. Activity Diagram
