@@ -217,13 +217,20 @@ This microservice represents the teacher assistant and ensures that questions an
 #### Responsibilities
 
 - **`add subscriber`**  
+
   Allows the assistant to monitor student connections and identify which student is sending a message.
 
 - **`remove subscriber`**  
+
   Removes a subscriber when it gracefully closes its connection with this microservice.
 
-- **`send message`**  
+- **`send message`** 
+
   Sends a message to either the `TeacherMicroservice` or the `MessageManagerMicroservice`, depending on the context.
+
+- **`check idenity`**
+
+  Checks the identity of the student that sends a message to make sure that only if the student id is in a list of students.
 
 #### Technologies Used
 
